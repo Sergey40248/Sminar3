@@ -6,27 +6,33 @@
 # [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] 
  
 n =  int(input("Номер элемента ряда Фибоначчи: "))
-list = [0, 1, 1]
-fib1 = 1
-fib2 = 1
-fib_sum = 0 
-i = 0
-while i < n - 2:
-    fib_sum = fib1 + fib2
-    fib1 = fib2
-    fib2 = fib_sum
-    list.append(fib2)
-    i += 1
+if n == 0:
+    print([0])
+elif n == 1:
+    print([1, 0, 1])
+else:
 
-fib1,fib2 = 0, 1
-i = 0
+    list = [0, 1, 1]
+    fib1 = 1
+    fib2 = 1
+    fib_sum = 0 
+    i = 0
+    while i < n - 2:
+        fib_sum = fib1 + fib2
+        fib1 = fib2
+        fib2 = fib_sum
+        list.append(fib2)
+        i += 1
 
-while i < n:
-    list.insert(0, fib2)
-    fib_sum = fib1 - fib2
-    fib1 = fib2
-    fib2 = fib_sum
-    i += 1
+    fib1,fib2 = 0, 1
+    i = 0
+
+    while i < n:
+        list.insert(0, fib2)
+        fib_sum = fib1 - fib2
+        fib1 = fib2
+        fib2 = fib_sum
+        i += 1
+        
     
- 
-print("Список ряда фибоначи\n", list)
+    print("Список ряда фибоначи\n", list)
